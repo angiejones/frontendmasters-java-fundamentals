@@ -18,3 +18,8 @@
 * Funtional Interfaces
 * Streams
 * Exception Handling
+
+## Set Up
+
+* Install [Community Edition of IntelliJ](https://www.jetbrains.com/idea/download)
+* Within IntelliJ, download Java 17 or higher
