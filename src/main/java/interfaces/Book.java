@@ -1,5 +1,7 @@
 package interfaces;
 
+import java.io.IOException;
+
 public class Book implements Product {
 
     private String name;
