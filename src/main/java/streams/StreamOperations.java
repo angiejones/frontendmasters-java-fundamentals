@@ -15,13 +15,13 @@ public class StreamOperations {
     );
 
     public static void main(String[] args) {
-        //anyMatchDemo();
-        //allMatchDemo();
-        //filterDemo();
-        //mapDemo();
-        //reduceDemo();
-        //intReduceDemo();
-        //collectDemo();
+        anyMatchDemo();
+        allMatchDemo();
+        filterDemo();
+        mapDemo();
+        reduceDemo();
+        intReduceDemo();
+        collectDemo();
         multiOperationDemo();
     }
 
