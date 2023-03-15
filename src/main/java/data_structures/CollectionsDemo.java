@@ -1,5 +1,6 @@
 package data_structures;
 
+
 import java.util.*;
 
 public class CollectionsDemo {
@@ -18,6 +19,11 @@ public class CollectionsDemo {
         fruits.add("lemon");
         fruits.add("apple");
 
+        var i = fruits.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+
         System.out.println(fruits);
 
         fruits.remove("lemon");
@@ -31,7 +37,7 @@ public class CollectionsDemo {
     }
 
     public static void listDemo(){
-        List fruits = new ArrayList();
+        List<String> fruits = new ArrayList();
         fruits.add("apple");
         fruits.add("lemon");
         fruits.add("banana");
@@ -39,8 +45,21 @@ public class CollectionsDemo {
 
         fruits.set(2, "grape");
         fruits.add("lemon");
-       // fruits.remove("lemon"); //removes first found
-       // fruits.remove(3);
+        fruits.remove("lemon"); //removes first found
+        fruits.remove(3);
+
+        for(String fruit : fruits){
+            System.out.println(fruit);
+        }
+
+        fruits.forEach(f-> System.out.println(f));
+        fruits.forEach(System.out::println); //alternative - method reference
+
+        //multiple statements
+        fruits.forEach(f->{
+            f = "fruit: " + f;
+            System.out.println(f);
+        });
 
         System.out.println("index 2: " + fruits.get(2));
         System.out.println("index of grape: " + fruits.indexOf("grape"));
@@ -70,13 +89,20 @@ public class CollectionsDemo {
 
     public static void mapDemo(){
 
-        Map fruitCalories = new HashMap();
+        Map<String, Integer> fruitCalories = new HashMap();
         fruitCalories.put("apple", 95);
         fruitCalories.put("lemon", 20);
         fruitCalories.put("banana", 105);
         fruitCalories.put("orange", 45);
         fruitCalories.putIfAbsent("lemon", 17);
         fruitCalories.remove("lemon");
+
+        for(Map.Entry calorieInfo : fruitCalories.entrySet()){
+            System.out.println(calorieInfo.getKey() + ": " + calorieInfo.getValue());
+        }
+
+        fruitCalories.forEach( (k, v) -> System.out.println(k + " : " + v));
+
 
         System.out.println(fruitCalories);
         System.out.println("banana calories: " + fruitCalories.get("banana"));
